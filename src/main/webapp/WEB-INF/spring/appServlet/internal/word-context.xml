@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="wordService" class="org.hcmut.emr.word.WordServiceImpl">
+		<property name="wordDao" ref="wordDao" />
+	</bean>
+
+	<bean id="wordDao" class="org.hcmut.emr.word.WordDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="tableHibernate" value="Word" />
+		<property name="keyHibernate" value="id" />
+	</bean>
+
+</beans>

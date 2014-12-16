@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.record.Record" table="record" lazy="false">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="text" type="java.lang.String">
+			<column name="text" />
+		</property>
+
+		<property name="name" type="java.lang.String">
+			<column name="name" />
+		</property>
+	</class>
+	
+	<sql-query name="getListRecordTrain">
+	   <return alias="record" class="org.hcmut.emr.record.Record"/>
+		<![CDATA[select id, null as text, name from emr.record]]>
+    </sql-query>
+    <sql-query name="getListRecordTest">
+        <return alias="record" class="org.hcmut.emr.record.Record"/>
+		<![CDATA[select id, null as text, name from emr_test.record]]>
+    </sql-query>
+    <sql-query name="addContributedRecord">
+        <![CDATA[insert into emr_cb.record(text, user_id, language) values(:text, :user_id, :language)]]>
+    </sql-query>
+    <sql-query name="getLastInsertId">
+        <![CDATA[select last_insert_id()]]>
+    </sql-query>
+</hibernate-mapping>
+    

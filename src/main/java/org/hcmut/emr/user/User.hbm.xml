@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.user.User" table="admin.users" lazy="false">
+		<id name="username" type="java.lang.String">
+			<column name="username" />
+			<generator class="native" />
+		</id>
+
+		<property name="password" type="java.lang.String">
+			<column name="password" />
+		</property>
+
+		<property name="firstName" type="java.lang.String">
+			<column name="first_name" />
+		</property>
+
+		<property name="lastName" type="java.lang.String">
+			<column name="last_name" />
+		</property>
+
+		<property name="email" type="java.lang.String">
+			<column name="email" />
+		</property>
+
+		<property name="phone" type="java.lang.String">
+			<column name="phone" />
+		</property>
+
+		<property name="enabled" type="int">
+			<column name="enabled" />
+		</property>
+
+	</class>
+</hibernate-mapping>
+    

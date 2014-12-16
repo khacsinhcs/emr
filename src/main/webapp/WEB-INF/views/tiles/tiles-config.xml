@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="login" template="/WEB-INF/views/login.jsp">
+	</definition>
+<!-- 	<definition name="403" template="/WEB-INF/views/403.jsp">
+	</definition>
+	<definition name="error" template="/WEB-INF/views/error.jsp">
+	</definition> -->
+	
+	<definition name="403" extends="base.manager">
+		<put-attribute name="title" value="Error page" />
+		<put-attribute name="body" value="/WEB-INF/views/403.jsp" />
+	</definition>
+	
+	<definition name="error" extends="base.manager">
+		<put-attribute name="title" value="Error page" />
+		<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
+	</definition>
+	
+	<definition name="base.manager" template="/WEB-INF/views/tiles/layout.jsp">
+		<put-attribute name="title" value="" type="string" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="navbar" value="/WEB-INF/views/tiles/navbar.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/views/tiles/sidebar.jsp" />
+	</definition>
+
+	<definition name="tool" extends="base.manager">
+		<put-attribute name="title" value="Concept Annotation Tool Helper" />
+		<put-attribute name="body" value="/WEB-INF/views/tool.jsp" />
+	</definition>
+	
+	<definition name="recordvn" extends="base.manager">
+		<put-attribute name="title" value="Vietnamese Record" />
+		<put-attribute name="body" value="/WEB-INF/views/recordvn.jsp" />
+	</definition>
+	
+	<definition name="recorden" extends="base.manager">
+		<put-attribute name="title" value="English Record" />
+		<put-attribute name="body" value="/WEB-INF/views/recorden.jsp" />
+	</definition>
+
+	<definition name="recordsinfo" extends="base.manager">
+		<put-attribute name="title" value="List Record" />
+		<put-attribute name="body" value="/WEB-INF/views/recordsinfo.jsp" />
+	</definition>
+
+	<definition name="home" extends="base.manager">
+		<put-attribute name="title" value="EMR-IE" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+    
+    <definition name="about" extends="base.manager">
+        <put-attribute name="title" value="About Us" />
+        <put-attribute name="body" value="/WEB-INF/views/about.jsp" />
+    </definition>
+    
+	<definition name="i2b2ibo" extends="base.manager">
+		<put-attribute name="title" value="List Record" />
+		<put-attribute name="body" value="/WEB-INF/views/i2b2ibo.jsp" />
+	</definition>
+
+	<definition name="i2b2record" extends="base.manager">
+		<put-attribute name="title" value="List Record" />
+		<put-attribute name="body" value="/WEB-INF/views/i2b2record.jsp" />
+	</definition>
+	
+	<definition name="ner" extends="base.manager">
+		<put-attribute name="title" value="Clinical Name Entity Recoginition" />
+		<put-attribute name="body" value="/WEB-INF/views/ner.jsp" />
+	</definition>
+
+</tiles-definitions>

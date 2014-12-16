@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="appConfig" class="org.hcmut.emr.config.AppConfig">
+		<property name="recordPos" value="100" />
+		<property name="extractDataPath" value="/home/silver/Documents/THESIS/Data/New" />
+		<property name="modelVNPath" value="/home/silver/Documents/THESIS/Data/Model/VN" />
+		<property name="modelENPath" value="/home/silver/Documents/THESIS/Data/Model/EN" />
+		<property name="resourcePathVNLib" value="/home/silver/Documents/LIBRARY/JVnTextPro/ProcessVNText/resources" />
+		<property name="javaCRFLibPath" value="/home/silver/Documents/THESIS/Algorithms/CRF++/CRF++-0.58/java/libCRFPP.so" />
+	</bean>
+</beans>

@@ -1,0 +1,23 @@
+#loginPopupModal .modal-header {
+	height: 70px;
+	text-align: center;
+}
+#loginPopupModal #loginTitle {
+	text-align: center;
+	font-size: 30px;	
+}
+#loginPopupModal .modal-body {
+	height: 230px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+#loginPopupModal #linkRegister {
+	float: right;
+	font-size: 20px;
+}
+
+#loginPopupModal #linkNeedHelop {
+	float: left;
+	font-size: 17px;
+}

@@ -1,0 +1,39 @@
+.store-avatar {
+	max-width: 240px;
+	margin-top: 20px;
+}
+
+.loginbox-or {
+	margin: 30px;
+}
+
+.CouponImageThumbnail {
+	max-width: 100%;
+	max-height: 250px;
+}
+
+#page-breadcrumbs-container {
+	display: none;
+}
+
+#header-title-detail-container {
+	display: none;	
+}
+
+.highcharts-legend {
+	display: none;
+}
+
+#floorplan-img {
+	width: 100%;
+}
+
+#map i {
+	position: absolute;
+	font-size: 14px;
+	cursor: pointer;
+}
+#map {
+	position: relative;
+	overflow: auto;
+}

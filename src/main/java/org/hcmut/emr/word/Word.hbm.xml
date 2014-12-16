@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.word.Word" table="word" lazy="false">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+
+		<property name="index" type="java.lang.Long">
+			<column name="`index`" />
+		</property>
+
+		<property name="content" type="java.lang.String">
+			<column name="content" />
+		</property>
+
+		<property name="iboTag">
+			<column name="ibo_tag" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="type">12</param>
+				<param name="enumClass">org.hcmut.emr.word.Word$IBOTag</param>
+			</type>
+		</property>
+
+		<property name="posTag" type="java.lang.String">
+			<column name="pos_tag" />
+		</property>
+
+		<property name="orthTag" type="java.lang.String">
+			<column name="orth_tag" />
+		</property>
+
+		<property name="umlsTag" type="int">
+			<column name="umls_tag" />
+		</property>
+		<property name="sessionTag" type="java.lang.String">
+			<column name="session_tag" />
+		</property>
+
+		<many-to-one name="sentence" class="org.hcmut.emr.sentence.Sentence"
+			cascade="none" fetch="join" insert="true" update="true">
+			<column name="sentence_id" />
+		</many-to-one>
+
+	</class>
+	<sql-query name="getListWordTrain">
+		<return alias="word" class="org.hcmut.emr.word.Word" />
+		<![CDATA[select * 
+		from emr.word s 
+		where s.sentence_id = :sentenceId]]>
+	</sql-query>
+
+	<sql-query name="getListWordTest">
+		<return alias="word" class="org.hcmut.emr.word.Word" />
+		<![CDATA[select * 
+		from emr_test.word s 
+		where s.sentence_id = :sentenceId]]>
+	</sql-query>
+
+	<sql-query name="addContributedWord">
+        <![CDATA[insert into emr_cb.word(sentence_id, `index`, content, ibo_tag) values(:sentence_id, :index, :content, :ibo_tag)]]>
+	</sql-query>
+
+</hibernate-mapping>
+    

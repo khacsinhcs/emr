@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.recvn.Recvn" table="benh_an.chi_tiet" lazy="false">
+		<id name="id" type="double">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="handle" type="long">
+			<column name="HANDLE_FLAG" />
+		</property>
+		
+		<!-- <property name="wordCount" type="long">
+			<column name="WORD_COUNT" />
+		</property> -->
+		
+		<property name="pic" type="java.lang.String">
+			<column name="PIC" />
+		</property>
+		
+	</class>
+	
+	<sql-query name="countAnnotatedRecordByUser">
+		<![CDATA[select count(*) as count from benh_an.chi_tiet c where c.handle_flag = 2 and c.pic = :username]]>
+    </sql-query>
+    
+    <query name="getListAnnotatedRecordByUser">
+		<![CDATA[from Recvn r where r.handle = 2 and r.pic = :username order by ANN_DATE desc]]>
+    </query>
+    
+    <sql-query name="getListUsers">
+		<![CDATA[select username from admin.users]]>
+    </sql-query>
+    
+</hibernate-mapping>

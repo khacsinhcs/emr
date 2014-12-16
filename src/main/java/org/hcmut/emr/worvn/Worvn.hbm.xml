@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.worvn.Worvn" table="word" lazy="false">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		
+		<property name="sentenceId" type="long">
+			<column name="sentence_id" />
+		</property>
+		
+		<property name="content" type="java.lang.String">
+			<column name="content" />
+		</property>
+
+		<property name="iboTag">
+			<column name="ibo_tag" />
+			<type name="org.hibernate.type.EnumType">
+				<param name="type">12</param>
+				<param name="enumClass">org.hcmut.emr.worvn.Worvn$IBOTag</param>
+			</type>
+		</property>
+
+		<property name="posTag" type="java.lang.String">
+			<column name="pos_tag" />
+		</property>
+		
+		<property name="orthTag" type="java.lang.String">
+            <column name="orth_tag" />
+        </property>
+        
+        <property name="dicTag" type="java.lang.Integer">
+            <column name="dic_tag" />
+        </property>
+        
+		<!-- <many-to-one name="sentence" class="org.hcmut.emr.senvn.Senvn"
+			cascade="none" fetch="join" insert="true" update="true">
+			<column name="sentence_id" />
+		</many-to-one> -->
+	</class>
+	
+    <sql-query name="findInDictionary">
+        <![CDATA[select count(*) from emr_lib.ICD10 d where d.name_vn like :content]]>
+    </sql-query>
+    
+    <sql-query name="updateDicTag">
+        <![CDATA[update emr_vn.word w set w.dic_tag = :tagValue where w.id = :id]]>
+    </sql-query>
+        
+</hibernate-mapping>
+    

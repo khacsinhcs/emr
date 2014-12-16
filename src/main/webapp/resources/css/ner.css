@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+#featuredContainer {
+	margin-left: 10px;
+}
+
+#clinicDataContent {
+	height: 399px !important;
+	overflow: auto;
+}
+
+#selectedLanguage {
+	padding: 3px !important;
+	margin-bottom: 6px !important;
+}
+
+#contributionTitle {
+	overflow: hidden;
+    background: #f9edbe;
+    border-color: #f0c36d;
+    padding: 5px 5px 5px 5px;
+}
+
+.hideContent {
+	display: none;
+}

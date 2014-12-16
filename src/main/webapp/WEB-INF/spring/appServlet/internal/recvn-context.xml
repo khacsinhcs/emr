@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="recvnService" class="org.hcmut.emr.recvn.RecvnServiceImpl">
+		<property name="recvnDao" ref="recvnDao" />
+	</bean>
+
+	<bean id="recvnDao" class="org.hcmut.emr.recvn.RecvnDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="tableHibernate" value="Recvn" />
+		<property name="keyHibernate" value="id" />
+	</bean>
+
+</beans>

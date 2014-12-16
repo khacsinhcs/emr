@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (C) Copyright 2009 Molisys Solutions Co., Ltd. , All rights reserved 
+	This source code and any compilation or derivative thereof is the sole property 
+	of Molisys Solutions Co., Ltd. and is provided pursuant to a Software License 
+	Agreement. This code is the proprietary information of Molisys Solutions 
+	Co., Ltd and is confidential in nature. Its use and dissemination by any 
+	party other than Molisys Solutions Co., Ltd is strictly limited by the confidential 
+	information provisions of the Agreement referenced above. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	</bean>
+</beans>

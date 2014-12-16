@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.hcmut.emr.senvn.Senvn" table="sentence"
+		lazy="false">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		
+		<property name="recordId" type="double">
+			<column name="record_id" />
+		</property>
+
+		<property name="content" type="java.lang.String">
+			<column name="content" />
+		</property>
+		
+		<property name="section" type="java.lang.String">
+			<column name="section" />
+		</property>
+		
+		<property name="handle" type="long">
+			<column name="handle" />
+		</property>
+		
+		<!-- <many-to-one name="record" class="org.hcmut.emr.recvn.Recvn"
+			cascade="none" fetch="join" insert="true" update="true">
+			<column name="record_id" />
+		</many-to-one> -->
+
+	</class>
+</hibernate-mapping>
+    

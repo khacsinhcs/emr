@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (C) Copyright 2009 Molisys Solutions Co., Ltd. , All rights reserved 
+	This source code and any compilation or derivative thereof is the sole property 
+	of Molisys Solutions Co., Ltd. and is provided pursuant to a Software License 
+	Agreement. This code is the proprietary information of Molisys Solutions 
+	Co., Ltd and is confidential in nature. Its use and dissemination by any 
+	party other than Molisys Solutions Co., Ltd is strictly limited by the confidential 
+	information provisions of the Agreement referenced above. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="order" value="1" />
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles3.TilesView
+			</value>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="order" value="2" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/views/tiles/tiles-config.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>

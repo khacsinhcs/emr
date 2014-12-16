@@ -1,0 +1,45 @@
+.problemHighlineClass {
+	color: #e74b37;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.testHighlineClass {
+	color: #53a93f;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.treatmentHighlineClass {
+	color: #8c0095;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#clinicDataContent {
+	height: 386px;
+	overflow: auto;
+	border: 1px solid rgb(236, 236, 236);
+	padding: 3px;
+}
+
+.sentenceHeader {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.btnClassConcept {
+	width: 100px;
+}
+
+#btnSubmitListConcept {
+	margin-top: 10px;
+}
+
+#btnUpdatetListConcept {
+	margin-top: 10px;
+}
+
+div.widget-main div.panel.panel-default {
+	margin-bottom: 10px !important;
+}
